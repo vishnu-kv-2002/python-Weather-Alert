@@ -33,11 +33,18 @@ for hour_data in data['list']:
 if will_rain:
     print('Bring an Umbrella')
     client = Client(account_sid, auth_token)
+    # for sms- if this not works use whatsapp method
     message = client.messages.create(
         body='Its going to rain today, Remember to bring an UMBRELLA.',
         from_='+19303004324',
         to='+919778311669'
     )
+    # try this
+    # message = client.messages.create(
+    #     body='Its going to rain today, Remember to bring an UMBRELLA.',
+    #     from_='whatsapp:+14155238886',
+    #     to='whatsapp:+919778311669'
+    # )
     print(message.status)
 
         
